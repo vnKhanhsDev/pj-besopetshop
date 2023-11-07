@@ -115,7 +115,7 @@ button {
   width: 100%;
   object-fit: cover;
   border-radius: inherit;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .beso-product-card .product-card-img-overlay {
@@ -376,3 +376,103 @@ button {
 }
 
 /* New Pets */
+.b-product-card {
+  position: relative;
+  padding: 15px;
+  border-radius: 12px;
+  background: var(--color-white);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.b-product-card__badges-wrap {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.b-product-card__badge {
+  width: 45px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: var(--fw-semiBold);
+  text-transform: uppercase;
+  background: #7f8d9d;
+  border-radius: 50px;
+  margin-bottom: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.b-product-card__badge--top {
+  background: #0052b1;
+}
+.b-product-card__badge--new {
+  background: #73be2f;
+}
+.b-product-card__badge--sale {
+  background: #f63e04;
+}
+
+.b-product-card__thumb-wrap {
+}
+.b-product-card__thumb-img {
+  border-radius: 12px;
+}
+.b-product-card__thumb-img img {
+  width: 100%;
+  border-radius: inherit;
+}
+.b-product-card__thumb-button-list {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.b-product-card__thumb-button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  background: var(--color-white);
+  border-radius: 50%;
+  color: #00234B;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 10px rgba(12, 44, 92, 0.07);
+}
+.b-product-card__thumb-button-text {
+}
+
+.b-product-card__infor-wrap {
+}
+
+.b-product-card__name {
+}
+
+.b-product-card__short-desc-wrap {
+}
+.b-product-card__short-desc {
+}
+.b-product-card__short-desc i {
+}
+
+.b-product-card__star-rating {
+}
+
+.b-product-card__price {
+}
+.b-product-card__original-price {
+}
+.b-product-card__sale-price {
+}
