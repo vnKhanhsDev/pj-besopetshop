@@ -1,10 +1,15 @@
 .Main-Contact{
     padding-top: 130px;
+    background-color:#fff;
+}
+.container-main{
+    background-color: #fff;
 }
 .tilte-contact h1{
     color: black;
     font-family:"Quicksand", sans-serif ;
     font-weight: 600;
+    margin-top: 40px;
 }
 .contact-item {
     display: flex;
