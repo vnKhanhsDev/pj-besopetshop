@@ -561,8 +561,6 @@ input:focus-visible {
   color: var(--color-dark-blue);
   margin-top: 10px;
 }
-.b-card-info-title-id {
-}
 .b-card-info-title span {
   margin: 0 5px;
 }
@@ -584,8 +582,6 @@ input:focus-visible {
 .b-card-info-short-desc-wrap i {
   font-size: 6px;
   margin: 0 10px;
-}
-.b-card-info-short-desc {
 }
 .b-card-info-short-desc span {
   color: var(--color-dark-blue);
