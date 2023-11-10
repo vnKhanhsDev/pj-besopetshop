@@ -19,7 +19,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/about.css">
+    <link rel="stylesheet" href="../assets/css/cart.css">
 </head>
 
 <body>
@@ -85,7 +85,117 @@
         <div class="b-header-buffer" style="padding-top: 129px;"></div>
         <!-- End: Header -->
 
-        
+        <div class="main-cart">
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="cart-title">
+                            Giỏ hàng của bạn
+                        </div>
+                    </div>
+                </div>
+               <form action="" class="cart-form mt-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sản phẩm</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Tạm tính</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr >
+                                <td>
+                                    <div class="product-infor">
+                                        <div class="product-img">
+                                            <a href=""><img src="../assets/img/product-img.jpg" alt=""></a>
+                                        </div>
+                                        <div class="infor">
+                                            <span>ID: TC0001</span>
+                                            <span class="name-product"><strong>Mèo xám tai cụp xinh</strong></span>
+                                            <span>Giới tính: Đực</span>
+                                            <span>Tuổi: 02 tháng</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="product-price">
+                                        <span class="price">9.999.999</span><span style="margin-left:4px;">VND</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="quantity">
+                                        <input min="0" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="product-price-total">
+                                        <span class="price">9.999.999 </span ><span style="margin-left:4px;">VND</span>
+                                    </div>
+                                </td>
+                                <td >
+                                    <div class="delete-product">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    <div class="product-infor">
+                                        <div class="product-img">
+                                            <a href=""><img src="../assets/img/cuncon/cuncon-corgi.jpg" alt=""></a>
+                                        </div>
+                                        <div class="infor">
+                                            <span>ID: TC0002</span>
+                                            <span class="name-product"><strong>Corgi Đẹp Trai</strong></span>
+                                            <span>Giới tính: Đực</span>
+                                            <span>Tuổi: 02 tháng</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="product-price">
+                                        <span class="price">11.000.000</span><span style="margin-left:4px;">VND</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="quantity">
+                                        <input min="0" name="quantity" value="1" type="number"
+                                        class="form-control form-control-sm" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="product-price-total">
+                                        <span class="price">11.000.000</span ><span style="margin-left:4px;">VND</span>
+                                    </div>
+                                </td>
+                                <td >
+                                    <div class="delete-product">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><h4>Tổng đơn hàng:</h4></td>
+                                <td></td>
+                                <td></td>
+                                <td><div class="oders-price-total">
+                                    <span class="price">20.999.999</span ><span style="margin-left:4px;">VND</span>
+                                </div></td>
+                                <td></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    <div class="oder-btn">
+                        <button class="oders-btn">Thanh toán ngay</button>
+                    </div>
+               </form>
+            </div>
+        </div>
 
         <!-- Begin: Footer -->
         <div class="b-footer">
@@ -154,6 +264,25 @@
 
     <!-- Bootstrap JS -->
     <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        // Lấy phần tử input và giá trị hiện tại
+        var quantityInput = document.getElementById('quantity');
+        var currentQuantity = 1;
+    
+        // Hàm giảm số lượng
+        function decreaseQuantity() {
+          if (currentQuantity > 1) {
+            currentQuantity--;
+            quantityInput.value = currentQuantity;
+          }
+        }
+    
+        // Hàm tăng số lượng
+        function increaseQuantity() {
+          currentQuantity++;
+          quantityInput.value = currentQuantity;
+        }
+      </script>
 
 </body>
 
