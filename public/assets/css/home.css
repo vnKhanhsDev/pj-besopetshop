@@ -177,13 +177,4 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-
-.b-knowledges-slick .slick-arrow{
-  left: 9px !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-.b-knowledges-slick .slick-next{
-
-}
 /* End: Knowledge */

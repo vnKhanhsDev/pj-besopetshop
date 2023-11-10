@@ -17,8 +17,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
 
+    <!-- Category CSS -->
+    <link rel="stylesheet" href="../assets/css/category.css">
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script>
+        document.querySelectorAll('.b-header-nav-item').forEach(item => {
+            item.classList.remove('b-header-active');
+        });
+    </script>
 </head>
 
 <body>
@@ -26,7 +35,7 @@
     <div id="main">
 
         <!-- Begin: Header -->
-        <div class="b-header-wrap">
+        <div class="b-header">
             <div class="container">
                 <div class="b-header-top-wrap d-flex justify-content-between align-items-center">
                     <div class="b-header-left d-flex align-items-center">
@@ -56,12 +65,12 @@
                         <img src="../assets/img/pngwing.com.png" alt="BesoPetShop">
                     </a>
                     <ul class="b-header-nav">
-                        <li class="b-header-nav-item b-header-active"><a href="#">trang chủ</a></li>
-                        <li class="b-header-nav-item"><a href="#">thú cưng</a></li>
-                        <li class="b-header-nav-item"><a href="#">sản phẩm</a></li>
-                        <li class="b-header-nav-item"><a href="#">dịch vụ</a></li>
-                        <li class="b-header-nav-item"><a href="#">giới thiệu</a></li>
-                        <li class="b-header-nav-item"><a href="#">liên hệ</a></li>
+                        <li class="b-header-nav-item b-header-active"><a href="../index.html">trang chủ</a></li>
+                        <li class="b-header-nav-item"><a href="./category.html?item=thucung">thú cưng</a></li>
+                        <li class="b-header-nav-item"><a href="./category.html?item=sanpham">sản phẩm</a></li>
+                        <li class="b-header-nav-item"><a href="./category.html?item=dichvu">dịch vụ</a></li>
+                        <li class="b-header-nav-item"><a href="./about.html">giới thiệu</a></li>
+                        <li class="b-header-nav-item"><a href="./contact.html">liên hệ</a></li>
                     </ul>
                     <div class="b-header-cart-shopping-wrap">
                         <a href="#" class="b-header-cart-shopping">
@@ -81,6 +90,7 @@
                 </div>
             </div>
         </div>
+        <div class="b-header-buffer" style="padding-top: 129px;"></div>
         <!-- End: Header -->
 
         <!-- Buffer testing -->
@@ -153,6 +163,35 @@
 
     <!-- Bootstrap JS -->
     <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        changeBgNavItem();
+        function changeBgNavItem() {
+            var currentItem = new URLSearchParams(window.location.search).get('item');
+            if (currentItem){
+                document.querySelectorAll('.b-header-nav-item').forEach(item => {
+                    item.classList.remove('b-header-active');
+                    const hrefParam = new URLSearchParams(new URL(item.querySelector('a').href).search).get('item');
+                    if (hrefParam === currentItem) {
+                        item.classList.add('b-header-active');
+                    }
+                });
+            }
+        }
+
+        document.querySelectorAll('.b-header-nav-item a').forEach(link => {
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+
+                const currentItem = new URLSearchParams(window.location.search).get('item');
+                const targetItem = this.getAttribute('href').split('=')[1];
+
+                if (currentItem !== targetItem){
+                    window.location.href = this.href;
+                }
+            });
+        });
+    </script>
 
 </body>
 

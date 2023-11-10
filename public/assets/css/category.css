@@ -1,0 +1,24 @@
+:root {
+  /* Color */
+  --color-black: #000;
+  --color-dark-blue: #00274a;
+  --color-light-blue: #d9f1ff;
+  --color-white: #fff;
+
+  /* Font-family */
+  --font-heading: "Coiny", cursive;
+
+  /* Font-size */
+  --fs-12: 0.75rem;
+  --fs-13: 0.813rem;
+  --fs-14: 0.875rem;
+
+  /* Font-weight */
+  --fw-medium: 500;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+}
+
+/* Begin: Banner */
+
+/* End: Banner */
