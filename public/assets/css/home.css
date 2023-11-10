@@ -1,0 +1,189 @@
+:root {
+  /* Color */
+  --color-black: #000;
+  --color-dark-blue: #00274a;
+  --color-light-blue: #d9f1ff;
+  --color-white: #fff;
+
+  /* Font-weight */
+  --fw-medium: 500;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+}
+
+/* Begin: Banner */
+.b-banner-wrap {
+  width: 100%;
+  height: 400px;
+}
+
+.b-banner-item img {
+  width: 100%;
+  height: 100%;
+}
+/* End: Banner */
+
+/* Begin: Discover Us */
+.b-discoverUs-wrap {
+  padding-top: 60px;
+}
+
+.b-discoverUs {
+  position: relative;
+  background: var(--color-dark-blue);
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 50px 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.b-discoverUs::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 600px;
+  background: var(--color-light-blue);
+  top: -30%;
+  left: 55%;
+  transform: rotate(30deg);
+  border-radius: 60px;
+}
+
+.b-discoverUs-img {
+}
+.b-discoverUs-img img {
+}
+
+.b-discoverUs-detail {
+  position: relative;
+  z-index: 2;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--color-dark-blue);
+  padding-bottom: 60px;
+}
+.b-discoverUs-title {
+  font-size: 50px;
+  font-weight: var(--fw-bold);
+  text-transform: capitalize;
+}
+.b-discoverUs-sub-title {
+  font-size: 20px;
+  font-weight: var(--fw-semiBold);
+  text-transform: capitalize;
+}
+.b-discoverUs-short-desc {
+  font-size: 14px;
+  text-align: end;
+  margin-top: 10px;
+}
+.b-discoverUs-button-list {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.b-discoverUs-button-list a:first-child {
+  margin-right: 10px;
+}
+/* End: Discover Us */
+
+/* Begin: Knowledge */
+.b-knowledges-wrap {
+  padding-top: 60px;
+}
+
+.b-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-dark-blue);
+  margin-bottom: 30px;
+}
+
+.b-heading-title {
+}
+.b-heading-sub-title {
+  color: var(--color-black);
+  font-weight: var(--fw-semiBold);
+}
+.b-heading-main-title {
+  font-size: 25px;
+  font-weight: var(--fw-bold);
+}
+
+.b-heading-button {
+}
+
+.b-knowledges {
+}
+
+.b-knowledge-item-wrap {
+  padding: 9px;
+}
+
+.b-knowledge-item {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 12px;
+  background: var(--color-white);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.b-knowledge-item-thumb {
+  width: 100%;
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.b-knowledge-item-thumb img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  transition: all 0.3s linear;
+}
+
+.b-knowledge-item:hover img {
+  transform: scale(1.1);
+}
+
+.b-knowledge-info {
+  padding: 15px;
+}
+.b-knowledge-type {
+  padding: 5px 20px;
+  display: inline-block;
+  background: #00a7e7;
+  font-weight: var(--fw-semiBold);
+  border-radius: 20px;
+  font-size: 12px;
+}
+.b-knowledge-title {
+  font-size: 18px;
+  font-weight: var(--fw-bold);
+  color: var(--color-dark-blue);
+  margin-top: 10px;
+}
+.b-knowledge-short-desc {
+  font-size: 14px;
+  color: #242b33;
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.b-knowledges-slick .slick-arrow{
+  left: 9px !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.b-knowledges-slick .slick-next{
+
+}
+/* End: Knowledge */
