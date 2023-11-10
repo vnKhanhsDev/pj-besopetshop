@@ -448,6 +448,7 @@ input:focus-visible {
 }
 .b-card-thumb-img img {
   width: 100%;
+  height: 300px;
   object-fit: cover;
   border-radius: inherit;
   transition: all 0.3s linear;
