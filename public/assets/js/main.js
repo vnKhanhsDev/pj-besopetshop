@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // localStorage.clear();
+    localStorage.clear();
     document.querySelectorAll('.b-card-info-atc-btn').forEach(addToCartBtn => {
         addToCartBtn.addEventListener('click', function (event) {
             event.preventDefault();
