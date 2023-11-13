@@ -1,21 +1,21 @@
-document.querySelectorAll('.b-card-info-atc-btn').forEach(button => {
-    button.addEventListener('click', function (event) {
-        event.preventDefault();
+$(document).ready(function () {
+    // localStorage.clear();
+    document.querySelectorAll('.b-card-info-atc-btn').forEach(addToCartBtn => {
+        addToCartBtn.addEventListener('click', function (event) {
+            event.preventDefault();
 
-        // Lấy thông tin sản phẩm từ phần tử HTML tương ứng
-        const productInfo = {
-            id: this.closest('.b-card').querySelector('.b-card-info-title-id').innerText,
-            name: this.closest('.b-card').querySelector('.b-card-info-title-name').innerText,
-            // Thêm các thông tin khác nếu cần
-        };
+            const productInfo = {
+                img: this.closest('.b-card').querySelector('.b-card-thumb-img img').getAttribute('src'),
+                id: this.closest('.b-card').querySelector('.b-card-info-title-id').innerText,
+                name: this.closest('.b-card').querySelector('.b-card-info-title-name').innerText,
+                price: this.closest('.b-card').querySelector('.b-card-info-now-price-number').innerText,
+            };
 
-        // Lấy danh sách sản phẩm từ LocalStorage (nếu có)
-        let productsInCart = JSON.parse(localStorage.getItem('products')) || [];
+            let productsInCart = JSON.parse(localStorage.getItem('products')) || [];
 
-        // Thêm sản phẩm mới vào danh sách
-        productsInCart.push(productInfo);
+            productsInCart.push(productInfo);
 
-        // Lưu lại danh sách sản phẩm vào LocalStorage
-        localStorage.setItem('products', JSON.stringify(productsInCart));
+            localStorage.setItem('products', JSON.stringify(productsInCart));
+        });
     });
 });
