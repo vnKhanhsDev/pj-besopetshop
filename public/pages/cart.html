@@ -253,7 +253,7 @@
             `;
             tableBody.appendChild(tr);
             // Tính toán tổng giá tiền
-            totalPrice += parseFloat(product.price.replace(/\./g, ''));
+            totalPrice += parseFloat(product.price.replace(/\./g, ''));     
         });
 
         const lastRow = document.createElement('tr');
@@ -266,22 +266,56 @@
             </div></td>
             <td></td>
         `;
-
         tableBody.appendChild(lastRow);
         
     </script>
     <script>
-        const tableBody1 = document.getElementById('table-cart'); 
-        tableBody1.addEventListener('click', function(event) {
-        const clickedElement = event.target;
-    if (clickedElement.classList.contains('delete-product')) {
-        const parentRow = clickedElement.closest('tr');
-        tableBody.removeChild(parentRow);
-        updateTotalPrice();
-    }
-});
+        function updateTotalPrice() {
+            // Đặt lại tổng giá về 0 trước khi tính lại
+            totalPrice = 0;
+        
+            // Duyệt qua các sản phẩm còn lại và cập nhật tổng giá
+            cartProducts.forEach(product => {
+                const quantityInput = product.quantity || 1;
+                totalPrice += parseFloat(product.price.replace(/\./g, '')) * quantityInput;
+            });
+        
+            // Cập nhật hiển thị tổng giá trên giao diện người dùng
+            const totalPriceElement = document.querySelector('.oders-price-total .price');
+            if (totalPriceElement) {
+                totalPriceElement.textContent = formatCurrency(totalPrice); // Cập nhật tổng giá với định dạng tiền tệ
+            }
+        
+            // Cập nhật local storage với cartProducts đã sửa đổi
+            localStorage.setItem('products', JSON.stringify(cartProducts));
+        }
+        
+        // Hàm định dạng số tiền thành chuỗi hiển thị
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('vi-VN', { currency: 'VND' }).format(amount);
+        }
+        
+        // Trình nghe sự kiện cho nút xóa sản phẩm
+        tableBody.addEventListener('click', function(event) {
+            const clickedElement = event.target;
+            if (clickedElement.classList.contains('delete-product')) {
+                const parentRow = clickedElement.closest('tr');
+                
+                // Lấy index của sản phẩm trong mảng cartProducts dựa vào thông tin trong hàng
+                const productIndex = [...parentRow.parentNode.children].indexOf(parentRow);
+        
+                // Xóa sản phẩm từ mảng cartProducts
+                cartProducts.splice(productIndex, 1);
+        
+                // Xóa hàng từ bảng
+                tableBody.removeChild(parentRow);
+        
+                // Cập nhật tổng giá
+                updateTotalPrice();
+            }
+        });
+        
     </script>
-
 </body>
 
 </html>
